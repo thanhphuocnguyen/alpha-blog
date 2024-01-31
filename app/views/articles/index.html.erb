@@ -2,13 +2,24 @@
 
 <h1>Articles</h1>
 
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
-  <% end %>
+<table id="articles">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <!-- <%= render article %> -->
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.description %></td>
+        <td><%= link_to "Show this article", article %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </div>
 
 <%= link_to "New article", new_article_path %>
