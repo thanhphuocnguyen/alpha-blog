@@ -69,9 +69,9 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    return if current_user == @article.user || current_user.admin?
+    return if current_user == @user || current_user.admin?
 
-    redirect_to article_url(@article),
+    redirect_to articles_url,
                 alert: 'You can only edit your own account.'
   end
 end

@@ -6,6 +6,9 @@
         by <%= link_to article.user.username, user_path(article.user) %>
       </p>
       <%= gravatar_for article.user, size: 80 %>
+      <div class="mt2">
+        <%= render article.categories %>
+      </div>
     <% end %>
   </div>
   <div class="card-body">

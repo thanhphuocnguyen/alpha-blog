@@ -10,7 +10,7 @@
     <%= will_paginate @articles, :container => false %>
 </div>
 <h3 class="text-center my-4">Articles</h3>
-<%= render "articles/articles"%>
+<%= render "articles/articles", articles: @articles %>
 <div class="flickr_pagination">
     <%= will_paginate @articles, :container => false %>
 </div>
