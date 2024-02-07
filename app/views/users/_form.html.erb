@@ -1,0 +1,31 @@
+<div class="col-10 mx-auto">
+    <%= render "shared/errors", obj: user %>
+    <div class="row justify-content-center gy-4">
+      <%= form_with(model: user, class: "shadow mb-3 bg-body rounded p-4") do |form| %> 
+        <div class="form-group row">
+          <%= form.label :username, class: "col-2 col-form-label" %>
+          <div class="col-10">
+            <%= form.text_field :username, class: "form-control shadow", placeholder: "Enter new username" %>
+          </div>
+        </div>
+      
+        <div class="form-group row my-3">
+          <%= form.label :email, class: "col-2 col-form-label" %> 
+          <div class="col-10">
+            <%= form.text_field :email, class: "form-control shadow", placeholder: "Enter new email" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= form.label :password, class: "col-2 col-form-label" %> 
+          <div class="col-10">
+            <%= form.password_field :password, rows: 10, class: "form-control shadow", placeholder: "Enter new password" %>
+          </div>
+        </div>
+      
+        <div class="form-group mt-4">
+          <%= form.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-outline-dark shadow d-block m-auto btn-lg") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
