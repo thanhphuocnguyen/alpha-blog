@@ -18,6 +18,7 @@ class CreateCategoryTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_match 'Travel', response.body
   end
+
   test 'invalid category submission results in failure' do
     get '/categories/new'
     assert_response :success
