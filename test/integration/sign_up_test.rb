@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class SignUpTest < ActionDispatch::IntegrationTest
   test 'create new user and redirect to listing articles page' do

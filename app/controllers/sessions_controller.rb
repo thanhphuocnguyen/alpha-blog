@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'Logged in!'
+      redirect_to root_url, success: 'Logged in!'
     else
       # important to use flash.now instead of flash
-      flash.now[:alert] = 'Email or password is invalid'
+      flash.now[:negative] = 'Email or password is invalid'
       # must return status to show message flash.now[:alert]
       render :new, status: :unauthorized
     end
@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
   # DELETE /logout
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: 'Logged out!'
+    redirect_to root_url, success: 'Logged out!'
   end
 end
